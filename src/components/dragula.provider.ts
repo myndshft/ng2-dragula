@@ -25,7 +25,7 @@ export class DragulaService {
     if (bag) {
       throw new Error('Bag named: "' + name + '" already exists.');
     }
-    bag = {name, drake};
+    bag = { name, drake };
     this.bags.push(bag);
     if (drake.models) { // models to sync with (must have same structure as containers)
       this.handleModels(name, drake);
@@ -88,7 +88,7 @@ export class DragulaService {
       } else {
         let notCopy = dragElm === dropElm;
         let targetModel = drake.models[drake.containers.indexOf(target)];
-        let dropElmModel = notCopy ? sourceModel[dragIndex] : JSON.parse(JSON.stringify(sourceModel[dragIndex]));
+        let dropElmModel = sourceModel[dragIndex]
 
         if (notCopy) {
           sourceModel.splice(dragIndex, 1);
